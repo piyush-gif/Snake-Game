@@ -1,59 +1,79 @@
-// const age = 25;
-// age = 26;
-// // const variable cannot be changed
+// array = [1, 2];
 
-// let name;
-// const email = "piyush@gmail.com";
-// isActive;
-
-// // let-> lets to change the value of the variable whereas const doesn't const-> is always constant. cannot be changed.
-
-// // function greet = () => {
-// //   return "Hello " + name;
-// // }
-
-// const func1 = (x) => {
-//   x * 2;
-// };
-// const func2 = (x) => x * 2;
-// // idk the difference
-
-// const randomnum = () => {
-//   num = randomnum();
-//   return num;
-// };
-
-// const numbers = [1, 2, 3, 4, 5];
-
-// const doubled = [];
-
-// numbers.map((num) => doubled.push(num));
+// const doubled = array.map((n) => n * 2);
+// const filtering = array.filter((n) => n != 1);
+// const sum = array.reduce((total, n) => total + n, 0); // nigga question
+// const user = array.find((a) => a == 1);
+// const hasEven = array.some((n) => n % 2 == 0); // check condition -> returns boolean
+// console.log(hasEven);
+// console.log(user);
 // console.log(doubled);
+// console.log(filtering);
 
-// async & await
+const [first, second] = [1, 2, 3];
 
-const getUserInfo = async () => {
-  try {
-    const response = await fetch("http://");
-    const user = await response.json();
-    console.log("user's name is" + username);
-  } catch (error) {
-    console.error("error".error);
-  }
-};
+// console.log(first, second);
 
-const getdata = async () => {
-  try {
-    const pokemon = fetch(`${url}`);
-    const pokedex = fetch(`${url}`);
+const arr = { 1: "name", 2: "birthdate", 3: 3 };
+// const num1 = [...arr]; // nigga question
+// console.log(num1);
 
-    const [pokeData, dexData] = await Promise.all([pokemon, pokedex]);
+// const getData = async () => {
+//   try {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     return data;
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
 
-    const poData = await pokeData.json();
-    const deData = await dexData.json();
+// const Data = getData();
+// const filteredData = Data.filter((d) => d.weight > 100).map((d) => d.name);
 
-    console.log(poData, deData);
-  } catch (error) {
-    console.error(`there's an error ${error}`);
-  }
-};
+// const delay = () => {
+//   console.log("You'll see the answer after 10 sec");
+//   setTimeout(() => {
+//     console.log("That's a bitch ass answer!!");
+//   }, 1000);
+// };
+// const answer = delay();
+// console.log(answer);
+
+const world = document.getElementById("world");
+const button = document.getElementById("btn");
+
+const array = [
+  ["*", "*", "*", "*", "*", "*"],
+  ["*", "*", "*", "*", "*", "*"],
+  ["*", "*", "*", "*", "*", "*"],
+  ["*", "*", "*", "*", "*", "*"],
+  ["*", "*", "*", "*", "*", "*"],
+  ["*", "*", "*", "*", "*", "*"],
+];
+
+button.addEventListener("click", (e) => {
+  world.textContent = array.map((row) => row.join(" ")).join("\n");
+});
+
+const grid = [
+  ["*", "*", "*"],
+  ["*", "*", "*"],
+];
+
+// console.log(grid.join("\n"));
+// console.log(grid.map((row) => row.join(" ")).join("\n"));
+
+// const nums = [1, 2, 3];
+// const doubled = nums.map((n) => n * 2);
+// // console.log(doubled);
+
+// nums.forEach((n) => console.log(n * 2));
+
+grid[0][0] = 1;
+console.log(grid.map((row) => row.join(" ")).join("\n"));
+
+// random
+
+const i = Math.floor(Math.random() * 5);
+console.log(i);
