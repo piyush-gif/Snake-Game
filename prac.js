@@ -77,3 +77,19 @@ console.log(grid.map((row) => row.join(" ")).join("\n"));
 
 const i = Math.floor(Math.random() * 5);
 console.log(i);
+
+const roll = document.getElementById("roll");
+const dice = document.getElementById("rollno");
+
+roll.addEventListener("click", () => {
+  dice.textContent = Math.floor(Math.random() * 6) + 1;
+  if (dice.textContent === "2") {
+    console.log("winner");
+  }
+});
+
+const obj1 = { name: "piyush", age: "25" };
+
+localStorage.setItem("user info", JSON.stringify(obj1));
+const saved = JSON.parse(localStorage.getItem("user info"));
+console.log(saved.name);
