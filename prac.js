@@ -15,8 +15,8 @@ const [first, second] = [1, 2, 3];
 // console.log(first, second);
 
 const arr = { 1: "name", 2: "birthdate", 3: 3 };
-// const num1 = [...arr]; // nigga question
-// console.log(num1);
+const num1 = [...arr]; // nigga question
+console.log(num1);
 
 // const getData = async () => {
 //   try {
@@ -40,26 +40,26 @@ const arr = { 1: "name", 2: "birthdate", 3: 3 };
 // const answer = delay();
 // console.log(answer);
 
-const world = document.getElementById("world");
-const button = document.getElementById("btn");
+// const world = document.getElementById("world");
+// const button = document.getElementById("btn");
 
-const array = [
-  ["*", "*", "*", "*", "*", "*"],
-  ["*", "*", "*", "*", "*", "*"],
-  ["*", "*", "*", "*", "*", "*"],
-  ["*", "*", "*", "*", "*", "*"],
-  ["*", "*", "*", "*", "*", "*"],
-  ["*", "*", "*", "*", "*", "*"],
-];
+// const array = [
+//   ["*", "*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*", "*"],
+// ];
 
-button.addEventListener("click", (e) => {
-  world.textContent = array.map((row) => row.join(" ")).join("\n");
-});
+// button.addEventListener("click", (e) => {
+//   world.textContent = array.map((row) => row.join(" ")).join("\n");
+// });
 
-const grid = [
-  ["*", "*", "*"],
-  ["*", "*", "*"],
-];
+// const grid = [
+//   ["*", "*", "*"],
+//   ["*", "*", "*"],
+// ];
 
 // console.log(grid.join("\n"));
 // console.log(grid.map((row) => row.join(" ")).join("\n"));
@@ -70,26 +70,50 @@ const grid = [
 
 // nums.forEach((n) => console.log(n * 2));
 
-grid[0][0] = 1;
-console.log(grid.map((row) => row.join(" ")).join("\n"));
+// grid[0][0] = 1;
+// console.log(grid.map((row) => row.join(" ")).join("\n"));
 
-// random
+// // random
 
-const i = Math.floor(Math.random() * 5);
-console.log(i);
+// const i = Math.floor(Math.random() * 5);
+// console.log(i);
 
-const roll = document.getElementById("roll");
-const dice = document.getElementById("rollno");
+// const roll = document.getElementById("roll");
+// const dice = document.getElementById("rollno");
 
-roll.addEventListener("click", () => {
-  dice.textContent = Math.floor(Math.random() * 6) + 1;
-  if (dice.textContent === "2") {
-    console.log("winner");
+// roll.addEventListener("click", () => {
+//   dice.textContent = Math.floor(Math.random() * 6) + 1;
+//   if (dice.textContent === "2") {
+//     console.log("winner");
+//   }
+// });
+
+// const obj1 = { name: "piyush", age: "25" };
+
+// localStorage.setItem("user info", JSON.stringify(obj1));
+// const saved = JSON.parse(localStorage.getItem("user info"));
+// console.log(saved.name);
+
+const matrix = [
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+];
+matrix[0][0] = "*";
+
+const matrix1 = document.getElementById("matrix");
+
+const render = (count) => {
+  matrix1.innerHTML = "";
+
+  for (let i = 0; i < count; i++) {
+    const box = document.createElement("div");
+    box.textContent = i;
+    box.className = "cell";
+    matrix1.append(box);
   }
-});
+};
 
-const obj1 = { name: "piyush", age: "25" };
-
-localStorage.setItem("user info", JSON.stringify(obj1));
-const saved = JSON.parse(localStorage.getItem("user info"));
-console.log(saved.name);
+render(10);
