@@ -10,13 +10,13 @@
 // console.log(doubled);
 // console.log(filtering);
 
-const [first, second] = [1, 2, 3];
+// const [first, second] = [1, 2, 3];
 
 // console.log(first, second);
 
-const arr = { 1: "name", 2: "birthdate", 3: 3 };
-const num1 = [...arr]; // nigga question
-console.log(num1);
+// const arr = { 1: "name", 2: "birthdate", 3: 3 };
+// const num1 = [...arr]; // nigga question
+// console.log(num1);
 
 // const getData = async () => {
 //   try {
@@ -102,9 +102,7 @@ const matrix = [
   [1, 2, 3, 4, 5],
 ];
 matrix[0][0] = "*";
-
 const matrix1 = document.getElementById("matrix");
-
 const render = (count) => {
   matrix1.innerHTML = "";
 
@@ -115,5 +113,4 @@ const render = (count) => {
     matrix1.append(box);
   }
 };
-
 render(10);
