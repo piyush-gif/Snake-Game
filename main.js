@@ -4,6 +4,7 @@ let size = 50;
 let board = [];
 let food;
 let head;
+let dir;
 function setup() {
   createCanvas(400, 400);
   background(220);
@@ -25,12 +26,14 @@ function setup() {
     Math.floor(Math.random() * 8)
   );
 
-  board[food.x][food.y] = -1;
-  board[head.x][head.y] = 1;
+  dir = createVector(0, 0);
 }
 
 function draw() {
   background(220);
+  head.add(dir);
+  board[food.x][food.y] = -1;
+  board[head.x][head.y] = 1;
   displayGrid();
 }
 
@@ -51,9 +54,12 @@ function displayGrid() {
 
 function keyPressed() {
   if (key == "w") {
-    board.y -= 1;
+    dir = createVector(0, -1);
   } else if (key == "a") {
+    dir = createVector(-1, 0);
   } else if (key == "s") {
+    dir = createVector(0, 1);
   } else if (key == "d") {
+    dir = createVector(1, 0);
   }
 }
