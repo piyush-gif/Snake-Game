@@ -5,12 +5,12 @@ let board = [];
 let food;
 let head;
 let dir;
+let gameOver;
 function setup() {
   createCanvas(400, 400);
   frameRate(60);
   rows = width / size;
   cols = height / size;
-
   for (let i = 0; i < rows; i++) {
     board[i] = [];
     for (let j = 0; j < cols; j++) {
@@ -22,13 +22,20 @@ function setup() {
   board[food.x][food.y] = -1;
   board[head.x][head.y] = 1;
   dir = createVector(0, 0);
+  gameOver = false;
 }
 
 function draw() {
   background(210);
   board[head.x][head.y] = 1;
-
-  createBoard();
+  board[food.x][food.y] = -1;
+  if (head.x < 0 || head.x > rows - 1 || head.y < 0 || head.y > cols - 1) {
+    console.log("game over");
+    gameOver = true;
+    return;
+  } else {
+    createBoard();
+  }
 }
 
 function createBoard() {
@@ -40,6 +47,8 @@ function createBoard() {
         fill(0, 255, 0);
       } else if (board[food.x][food.y] == board[head.x][head.y]) {
         food = createVector(int(random(0, rows)), int(random(0, cols)));
+      } else if (board[food.x][food.y] == board[head.x][head.y]) {
+        food = createVector(int(random(0, rows)), int(random(0, cols)));
       } else {
         fill(255);
       }
@@ -47,15 +56,7 @@ function createBoard() {
     }
   }
 }
-function addTail() {
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      if (board[food.x][food.y] == board[head.x][head.y]) {
-        food = createVector(int(random(0, rows)), int(random(0, cols)));
-      }
-    }
-  }
-}
+function addTail() {}
 
 function keyPressed() {
   if (key == "a") {
