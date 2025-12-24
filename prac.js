@@ -114,3 +114,9 @@ const render = (count) => {
   }
 };
 render(10);
+
+let nums = [2, 20, 4, 10, 3, 4, 5];
+
+const consecutive = (nums) => {
+  for (let i = 0; i < nums.length; i++) {}
+};
