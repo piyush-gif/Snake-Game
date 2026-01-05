@@ -94,29 +94,36 @@
 // const saved = JSON.parse(localStorage.getItem("user info"));
 // console.log(saved.name);
 
-const matrix = [
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-];
-matrix[0][0] = "*";
-const matrix1 = document.getElementById("matrix");
-const render = (count) => {
-  matrix1.innerHTML = "";
+// const matrix = [
+//   [1, 2, 3, 4, 5],
+//   [1, 2, 3, 4, 5],
+//   [1, 2, 3, 4, 5],
+//   [1, 2, 3, 4, 5],
+//   [1, 2, 3, 4, 5],
+// ];
+// matrix[0][0] = "*";
+// const matrix1 = document.getElementById("matrix");
+// const render = (count) => {
+//   matrix1.innerHTML = "";
 
-  for (let i = 0; i < count; i++) {
-    const box = document.createElement("div");
-    box.textContent = i;
-    box.className = "cell";
-    matrix1.append(box);
-  }
-};
-render(10);
+//   for (let i = 0; i < count; i++) {
+//     const box = document.createElement("div");
+//     box.textContent = i;
+//     box.className = "cell";
+//     matrix1.append(box);
+//   }
+// };
+// render(10);
 
-let nums = [2, 20, 4, 10, 3, 4, 5];
+// let nums = [2, 20, 4, 10, 3, 4, 5];
 
-const consecutive = (nums) => {
-  for (let i = 0; i < nums.length; i++) {}
-};
+// const consecutive = (nums) => {
+//   for (let i = 0; i < nums.length; i++) {}
+// };
+
+let obj = [1, 2, 2, 3, 4];
+let array = [{ id: 1 }, { id: 1 }, { id: 2 }, { id: 3 }];
+
+let test = array.filter((arr) => arr.id == 1);
+let newArray = [...obj, ...test];
+console.log(newArray);
